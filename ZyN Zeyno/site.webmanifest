@@ -1,0 +1,16 @@
+{
+  "name": "ZyN Zeyno · Toptan Kadın Giyim",
+  "short_name": "ZyN Zeyno",
+  "description": "Butik ve mağazalar için seri halinde toptan kadın giyim. Sipariş WhatsApp üzerinden.",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#FFF9F8",
+  "theme_color": "#F9CACD",
+  "icons": [
+    { "src": "assets/img/ikonlar/ikon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "assets/img/ikonlar/ikon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "assets/img/ikonlar/ikon-maskable-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

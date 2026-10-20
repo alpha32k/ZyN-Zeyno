@@ -1,0 +1,50 @@
+# ZyN Zeyno — Apache / Hostinger sunucu ayarları
+# (Netlify veya Cloudflare Pages kullanılıyorsa aynı ayarlar _headers dosyasındadır.)
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+AddType application/manifest+json .webmanifest
+AddType image/webp .webp
+AddType image/avif .avif
+
+# Yayına gerek olmayan dosyalar dışarıdan açılamasın
+<FilesMatch "(^\.|\.(md|ps1|bak|log|rar|zip)$|^_headers$)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+  # HTTP → HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1) [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # /index.html → /   (aynı sayfa iki farklı adreste görünmesin)
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # HTTPS sertifikası kurulduktan sonra aktif olur (tarayıcı 1 yıl boyunca yalnızca HTTPS kullanır)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+  Header unset X-Powered-By
+
+  # Dosya adlarında ?v= sürüm numarası olduğu için CSS/JS/görseller uzun süre önbellekte kalabilir
+  <FilesMatch "\.(css|js|png|jpe?g|webp|avif|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain application/manifest+json
+</IfModule>

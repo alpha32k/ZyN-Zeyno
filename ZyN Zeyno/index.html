@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>ZyN Zeyno · Toptan Kadın Giyim</title>
+  <meta name="description" content="ZyN Zeyno — butik ve mağazalara seri halinde toptan kadın giyim. Elbise, bluz, pantolon, takım ve daha fazlası. Sipariş WhatsApp üzerinden.">
+  <meta name="theme-color" content="#F9CACD">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="ZyN Zeyno">
+  <meta property="og:title" content="ZyN Zeyno · Toptan Kadın Giyim">
+  <meta property="og:description" content="Butik ve mağazalar için seri halinde toptan kadın giyim. Elbise, bluz, pantolon, takım ve daha fazlası. Sipariş WhatsApp üzerinden.">
+  <meta property="og:image" content="https://zynzeyno.com/assets/img/paylasim.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZyN Zeyno — toptan kadın giyim">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- yayin:basla -->
+  <link rel="canonical" href="https://zynzeyno.com/">
+  <meta property="og:url" content="https://zynzeyno.com/">
+  <meta name="twitter:image" content="https://zynzeyno.com/assets/img/paylasim.png">
+  <!-- yayin:bitis -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/ikonlar/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=202610131051">
+</head>
+<body data-sayfa="ana">
+<noscript><div class="noscript-uyari"><p class="not">Ürünleri görüntülemek için tarayıcınızda JavaScript'in açık olması gerekir. Bize doğrudan WhatsApp'tan da ulaşabilirsiniz.</p></div></noscript>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-dalga" viewBox="0 0 600 640" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#F9CACD" d="M70 0C30 80 18 160 46 250s48 170 18 260c-14 42-12 90 6 130H600V0z"/>
+    </svg>
+    <div class="kap">
+      <div class="hero-metin">
+        <span class="ust-yazi">Toptan · Seri Satış</span>
+        <h1>ZyN<br>Zeyno</h1>
+        <p>Butiğiniz ve mağazanız için zarif, satılabilir kadın giyim koleksiyonları. Seri halinde, toptan fiyatlarla — siparişiniz tek bir WhatsApp mesajı uzaklıkta.</p>
+        <div class="hero-butonlar">
+          <a href="#urunler" class="btn btn-gul">Ürünleri İncele</a>
+          <a href="#" class="btn btn-cizgi" id="heroWa">WhatsApp'tan Yazın</a>
+        </div>
+        <div class="hero-etiketler" id="heroNotlar"></div>
+      </div>
+      <div class="hero-gorsel">
+        <img src="assets/img/hero-cizim.png" alt="ZyN Zeyno tek çizgi kadın profili logosu" width="800" height="956">
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜRÜNLER -->
+  <section class="bolum" id="urunler">
+    <div class="kap">
+      <div class="bolum-baslik">
+        <span class="ust-yazi">Koleksiyon</span>
+        <h2>Ürünler</h2>
+        <p>Tüm ürünler seri halinde satılır. Seri içeriği her ürünün üzerinde yazar.</p>
+      </div>
+      <div class="arac">
+        <div class="arac-ust">
+          <!-- soldaki filtre panelini (arama + kategoriler) açar -->
+          <button type="button" class="filtre-btn" id="filtreAc" aria-expanded="false" aria-controls="filtrePanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+            <span class="filtre-btn-yazi"><small>Ara &amp; Kategoriler</small><b id="filtreEtiket">Tümü</b></span>
+            <span class="arama-isareti" id="aramaIsareti" hidden>arama</span>
+          </button>
+
+          <!-- soldan açılan panel -->
+          <div class="arac-panel" id="filtrePanel" aria-label="Ürün arama ve kategoriler">
+            <div class="panel-ust">
+              <h2>Ürünleri Filtrele</h2>
+              <button type="button" class="panel-kapat" id="filtreKapat" aria-label="Paneli kapat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            </div>
+            <label class="ara-kutu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+              <input id="arama" type="search" placeholder="Ürün adı veya kodu ara" aria-label="Ürün ara" autocomplete="off" maxlength="60">
+              <button type="button" class="temizle" id="temizle" aria-label="Aramayı temizle" hidden>×</button>
+            </label>
+            <span class="panel-baslik">Kategoriler</span>
+            <div class="sekmeler" id="cipler" role="tablist" aria-label="Kategoriler"></div>
+            <div class="panel-alt"><button type="button" class="btn btn-gul" id="filtreGoster">Ürünleri Göster</button></div>
+          </div>
+          <div class="filtre-perde" id="filtrePerde"></div>
+          <div class="sirala" id="sirala">
+            <button type="button" class="sirala-btn" id="siralaBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="siralaMenu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              <span class="sirala-yazi" id="siralaYazi">Yeniler önce</span>
+              <svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="sirala-menu" id="siralaMenu" role="listbox" aria-label="Sırala" tabindex="-1">
+              <li class="sirala-baslik" role="presentation">Sırala</li>
+              <li role="option" data-v="yeni">Yeniler önce</li>
+              <li role="option" data-v="artan" data-fiyat>Fiyat: düşükten yükseğe</li>
+              <li role="option" data-v="azalan" data-fiyat>Fiyat: yüksekten düşüğe</li>
+              <li role="option" data-v="ad">İsme göre (A–Z)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sonuc-yazi" id="sonuc" aria-live="polite"></div>
+      <div class="urun-izgara" id="liste"></div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="bolum iletisim-bolum" id="iletisim">
+    <div class="kap">
+      <div class="bolum-baslik">
+        <span class="ust-yazi">Bize Ulaşın</span>
+        <h2>İletişim</h2>
+      </div>
+      <div class="iletisim-izgara" id="iletisimKartlar"></div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/config.js?v=202610131051"></script>
+<script src="assets/js/data.js?v=202610131051"></script>
+<script src="assets/js/app.js?v=202610131051"></script>
+<script src="assets/js/ana.js?v=202610131051"></script>
+</body>
+</html>

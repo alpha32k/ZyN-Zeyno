@@ -1,0 +1,6 @@
+# ZyN Zeyno — robots.txt (Yönetim Paneli tarafından üretilir)
+User-agent: *
+Allow: /
+Disallow: /404
+
+Sitemap: https://zynzeyno.com/sitemap.xml

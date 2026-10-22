@@ -10,9 +10,9 @@
 
 ## Türkçe
 
-Toptan kadın giyim satan bir mağaza için katalog sitesi ve yerel yönetim paneli.
+Toptan kadın giyim satan bir mağaza için katalog sitesi. Yönetim paneli ayrı (özel) depodadır: ZyN-Zeyno-Admin.
 
-### Site (`ZyN Zeyno/`)
+### Site
 
 HTML, CSS ve JavaScript ile yazılmış statik bir site. Sunucu, veritabanı, üyelik veya ödeme yok; siparişler WhatsApp üzerinden alınır.
 
@@ -25,19 +25,13 @@ HTML, CSS ve JavaScript ile yazılmış statik bir site. Sunucu, veritabanı, ü
   - Tüm metinler sayfaya yazılmadan önce kaçışlanır (XSS koruması).
   - Çerez veya takip aracı yok.
 
-### Yönetim paneli (`ZyN Zeyno Yönetim/`)
+### Yönetim paneli
 
-Node.js ile yalnızca o bilgisayarda çalışan bir panel (`127.0.0.1`); internete ve ağdaki diğer cihazlara kapalı.
-
-- Ürün, kategori, iletişim ve mağaza ayarlarını düzenler; ürün fotoğraflarını küçültür; her kayıttan önce yedek alır.
-- "Yayınla" önce siteyi kontrol eder, sonra Cloudflare Pages'e yükler.
+Ayrı ve özel bir depoda: **ZyN-Zeyno-Admin**. Node.js ile yalnızca yönetici bilgisayarında çalışır (`127.0.0.1`); bu sitenin `assets/js/config.js` ve `data.js` dosyalarını yazar. İki depo yan yana klonlanır (`ZyN-Zeyno` ve `ZyN-Zeyno-Admin`).
 
 ### Çalıştırma
 
-1. [Node.js](https://nodejs.org) (LTS) kurun.
-2. `ZyN Zeyno Yönetim/Yonetim Paneli.bat` dosyasına çift tıklayın. Panel tarayıcıda açılır: `http://127.0.0.1:5199`.
-
-Ayrıntılar: [Yönetim paneli belgesi](<ZyN Zeyno Yönetim/README.md>) · [Proje tanımı](<ZyN Zeyno Yönetim/PROMPT.md>)
+Site statiktir: `index.html` dosyasını açmak veya herhangi bir statik sunucuyla yayınlamak yeterlidir (GitHub Pages dahil).
 
 > Bu depoda iletişim bilgileri (telefon, adres, e-posta, sosyal medya) yer almaz. Panelin “İletişim & Ayarlar” sekmesinden doldurulur.
 
@@ -45,9 +39,9 @@ Ayrıntılar: [Yönetim paneli belgesi](<ZyN Zeyno Yönetim/README.md>) · [Proj
 
 ## English
 
-A catalogue site and a local admin panel for a shop that sells women's clothing wholesale.
+A catalogue site for a shop that sells women's clothing wholesale. The admin panel lives in a separate private repository, ZyN-Zeyno-Admin.
 
-### Site (`ZyN Zeyno/`)
+### Site
 
 A static site in HTML, CSS and JavaScript. No server, database, accounts or payments; orders are taken over WhatsApp.
 
@@ -60,19 +54,13 @@ A static site in HTML, CSS and JavaScript. No server, database, accounts or paym
   - Every text is escaped before it reaches the page (XSS protection).
   - No cookies or tracking.
 
-### Admin panel (`ZyN Zeyno Yönetim/`)
+### Admin panel
 
-A Node.js panel that runs only on that computer (`127.0.0.1`), closed to the internet and other devices on the network.
-
-- Edits products, categories, contact details and shop settings; shrinks product photos; backs up before every save.
-- "Publish" checks the site first, then uploads it to Cloudflare Pages.
+In a separate private repository: **ZyN-Zeyno-Admin**. A Node.js panel that runs only on the admin's computer (`127.0.0.1`); it writes this site's `assets/js/config.js` and `data.js`. Clone both repositories side by side.
 
 ### Running it
 
-1. Install [Node.js](https://nodejs.org) (LTS).
-2. Double-click `ZyN Zeyno Yönetim/Yonetim Paneli.bat`. The panel opens in the browser at `http://127.0.0.1:5199`.
-
-The panel documentation (Turkish) is in [ZyN Zeyno Yönetim/README.md](<ZyN Zeyno Yönetim/README.md>).
+The site is static: open `index.html` or serve it with any static host (GitHub Pages included).
 
 > This repository contains no contact details (phone, address, email, social media); they are filled in from the panel's “İletişim & Ayarlar” tab.
 

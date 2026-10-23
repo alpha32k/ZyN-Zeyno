@@ -2,9 +2,7 @@
 
 [Türkçe](#türkçe) · [English](#english)
 
-| Ana sayfa · Home page | Ürün sayfası · Product page |
-|---|---|
-| <img src="screenshots/home.png" alt="The whole home page: hero, products with search and categories, contact section and footer"> | <img src="screenshots/product.png" alt="A product page: colours, series content, series count, total and the WhatsApp order button"> |
+**[🌐 Canlı site · Live site](https://alpha32k.github.io/ZyN-Zeyno/)**
 
 ---
 
